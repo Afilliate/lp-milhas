@@ -17,7 +17,6 @@ import './App.css';
  */
 
 function App() {
-  // Page view opcional (dispara ViewContent para remarketing)
   useEffect(() => {
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'ViewContent', {
@@ -27,14 +26,9 @@ function App() {
     }
   }, []);
 
-  /**
-   * Função que dispara o evento LeadQualificado no Pixel
-   * e redireciona para o checkout da Kiwify.
-   */
   const handleCTAClick = (e, checkoutUrl) => {
     e.preventDefault();
 
-    // Dispara evento personalizado LeadQualificado no Meta Pixel
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('trackCustom', 'LeadQualificado', {
         content_name: 'Ticket Milhas',
@@ -43,7 +37,6 @@ function App() {
       });
     }
 
-    // Pequeno delay para garantir que o Pixel envie o evento
     setTimeout(() => {
       window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
     }, 100);
@@ -51,9 +44,7 @@ function App() {
 
   return (
     <div className="app">
-      {/* ============================================================ */}
       {/* HEADER */}
-      {/* ============================================================ */}
       <header className="header">
         <div className="container header-content">
           <img
@@ -65,9 +56,7 @@ function App() {
         </div>
       </header>
 
-      {/* ============================================================ */}
       {/* HERO COM BACKGROUND IMAGE */}
-      {/* ============================================================ */}
       <section
         className="hero"
         style={{
@@ -91,9 +80,7 @@ function App() {
         </div>
       </section>
 
-      {/* ============================================================ */}
       {/* COMO FUNCIONA */}
-      {/* ============================================================ */}
       <section className="how-it-works">
         <div className="container">
           <h2>Como funciona</h2>
@@ -126,9 +113,7 @@ function App() {
         </div>
       </section>
 
-      {/* ============================================================ */}
       {/* DEPOIMENTOS */}
-      {/* ============================================================ */}
       <section className="testimonials">
         <div className="container">
           <h2>Quem já economizou</h2>
@@ -153,9 +138,7 @@ function App() {
         </div>
       </section>
 
-      {/* ============================================================ */}
       {/* GARANTIA */}
-      {/* ============================================================ */}
       <section className="guarantee">
         <div className="container">
           <div className="guarantee-box">
@@ -169,9 +152,7 @@ function App() {
         </div>
       </section>
 
-      {/* ============================================================ */}
       {/* CTA FINAL */}
-      {/* ============================================================ */}
       <section className="cta-final">
         <div className="container">
           <h2>Pronto para economizar na sua próxima viagem?</h2>
@@ -186,18 +167,16 @@ function App() {
             Quero Economizar Agora
           </a>
 
-          {/* UPSELL DISCRETO */}
+          {/* UPSELL CORRIGIDO */}
           <p className="upsell">
             <a href="#checkout-kiwify-397">
-              Conheça o Plano Completo de Assessoria de Milhas (R$ 397)
+              Conheça o Pacote de Viagem Completo com Milhas (R$ 397)
             </a>
           </p>
         </div>
       </section>
 
-      {/* ============================================================ */}
       {/* FOOTER */}
-      {/* ============================================================ */}
       <footer className="footer">
         <div className="container">
           <p>© 2026 SD Viagens. Todos os direitos reservados.</p>
