@@ -66,10 +66,16 @@ function App() {
       </header>
 
       {/* ============================================================ */}
-      {/* HERO */}
+      {/* HERO COM BACKGROUND IMAGE */}
       {/* ============================================================ */}
-      <section className="hero">
-        <div className="container">
+      <section
+        className="hero"
+        style={{
+          backgroundImage: `url('https://res.cloudinary.com/dxphpupax/image/upload/v1780443628/First_class_airplane_cabin_interior_202606022040_uatd31.jpg')`,
+        }}
+      >
+        <div className="hero-overlay" />
+        <div className="container hero-content">
           <h1>Viaje pagando menos: eu pesquiso e emito sua passagem com milhas.</h1>
           <p className="hero-subtitle">
             Você escolhe o voo, eu faço o resto. Se não houver economia real
