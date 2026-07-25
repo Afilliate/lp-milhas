@@ -1,11 +1,11 @@
 /* ============================================================
-   TICKET MILHAS (SD Viagens) – ESTILOS
+   SD VIAGENS – CONCIERGE DE VOOS INTERNACIONAIS
    Paleta:
-   - Fundo escuro: #1a1a1a
+   - Fundo principal: #1a1a1a
    - Texto base: #b3b3b3
    - Destaque (dourado): #C0A05D
-   - Fundo de cards: #262626
-   - Bordas sutis: rgba(192, 160, 93, 0.2)
+   - Cards: #262626
+   - Bordas sutis: rgba(192, 160, 93, 0.15)
    ============================================================ */
 
 * {
@@ -65,6 +65,7 @@ a {
 .header-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -115,7 +116,7 @@ a {
 }
 
 /* ============================================================ */
-/* HERO COM BACKGROUND IMAGE */
+/* HERO */
 /* ============================================================ */
 .hero {
   position: relative;
@@ -130,7 +131,7 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(26, 26, 26, 0.9));
   z-index: 1;
 }
 
@@ -152,6 +153,49 @@ a {
 }
 
 /* ============================================================ */
+/* CTA INTERMEDIÁRIO */
+/* ============================================================ */
+.cta-mid {
+  padding: 60px 0;
+  text-align: center;
+  background: #1a1a1a;
+}
+
+.guarantee-reminder {
+  margin-top: 20px;
+  color: #888;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ============================================================ */
+/* EXEMPLO REAL DE ECONOMIA */
+/* ============================================================ */
+.economy-example {
+  margin-top: 40px;
+  padding: 20px 24px;
+  background: #262626;
+  border: 1px solid rgba(192, 160, 93, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #ddd;
+  font-size: 1rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.economy-example strong {
+  color: #C0A05D;
+}
+
+/* ============================================================ */
 /* COMO FUNCIONA */
 /* ============================================================ */
 .how-it-works {
@@ -160,7 +204,7 @@ a {
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 36px;
 }
 
@@ -285,22 +329,6 @@ a {
   font-size: 1.05rem;
 }
 
-.upsell {
-  margin-top: 28px;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-.upsell a {
-  color: #888;
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-
-.upsell a:hover {
-  color: #C0A05D;
-}
-
 /* ============================================================ */
 /* FOOTER */
 /* ============================================================ */
@@ -310,6 +338,12 @@ a {
   text-align: center;
   color: #888;
   font-size: 0.95rem;
+}
+
+.footer-security {
+  margin: 12px 0;
+  font-size: 0.85rem;
+  color: #666;
 }
 
 .footer a {
@@ -337,6 +371,7 @@ a {
     padding: 80px 0;
   }
 
+  .cta-mid,
   .how-it-works,
   .testimonials,
   .guarantee,
@@ -354,69 +389,86 @@ a {
     padding: 32px 20px;
   }
 
-  .header-content {
-    justify-content: center;
+  .economy-example {
+    flex-direction: column;
+    text-align: center;
   }
 }
 /* ============================================================ */
-/* PÁGINA DE AGRADECIMENTO */
+/* NOVOS ESTILOS PREMIUM – SD VIAGENS */
 /* ============================================================ */
-.thankyou-page {
-  display: flex;
+
+/* Estrelas nos depoimentos */
+.testimonial-stars {
+  color: #C0A05D;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+/* Selo de garantia dentro do card */
+.guarantee-seal {
+  margin-top: 28px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 160px); /* header + footer */
-  padding: 60px 0;
+  gap: 8px;
+  background: #1a1a1a;
+  border: 1px solid #C0A05D;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #C0A05D;
 }
 
-.thankyou-content {
-  text-align: center;
-}
-
-.thankyou-content h1 {
+/* Ícones no passo a passo */
+.step-icon {
   font-size: 2.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.thankyou-content .subtitle {
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  color: #b3b3b3;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
+/* FAQ */
+.faq {
+  padding: 80px 0;
+  background: #1a1a1a;
 }
 
-.instructions {
-  margin-bottom: 36px;
-  color: #b3b3b3;
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 36px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.instructions ol {
-  text-align: left;
-  max-width: 400px;
-  margin: 16px auto 20px;
-  padding-left: 20px;
-  line-height: 1.7;
+.faq-item {
+  background: #262626;
+  border: 1px solid rgba(192, 160, 93, 0.1);
+  border-radius: 12px;
+  padding: 28px 24px;
 }
 
-.guarantee-thankyou {
-  margin-top: 48px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: center;
+.faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #C0A05D;
+}
+
+.faq-item p {
   color: #b3b3b3;
   font-size: 0.95rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #262626;
-  padding: 16px 24px;
-  border-radius: 8px;
-  border: 1px solid rgba(192, 160, 93, 0.15);
 }
 
-.guarantee-thankyou strong {
-  color: #C0A05D;
+/* Texto de urgência no CTA final */
+.cta-urgency {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Ajuste responsivo para FAQ */
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
 }
