@@ -3,24 +3,24 @@ import './App.css';
 
 /**
  * ============================================================
- * TICKET MILHAS (SD Viagens) – LANDING PAGE
+ * SD VIAGENS – CONCIERGE DE VOOS INTERNACIONAIS
+ * (Variação 2: Terceirização Inteligente)
  * ============================================================
  * 
  * PLACEHOLDERS PARA SUBSTITUIR (procure por "TODO"):
- * 1. Links da Kiwify (checkout R$197 e R$397)
- * 2. Número de WhatsApp
- * 3. Depoimentos reais
- * 4. Pixel ID da Meta (no index.html)
+ * 1. Link real da Kiwify (R$197)
+ * 2. Depoimentos reais
+ * 3. Pixel ID da Meta (no index.html)
  * 
- * O código base do Pixel deve ser inserido no index.html.
+ * WhatsApp: 5511976134095 (já correto)
  * ============================================================
  */
 
-function App() {
+function Home() {
   useEffect(() => {
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'ViewContent', {
-        content_name: 'LP Ticket Milhas',
+        content_name: 'LP Concierge Internacional',
         content_category: 'Milhas',
       });
     }
@@ -30,16 +30,22 @@ function App() {
     e.preventDefault();
 
     if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('trackCustom', 'LeadQualificado', {
-        content_name: 'Ticket Milhas',
-        content_category: 'Milhas',
-        currency: 'BRL',
-      });
-    }
-
-    setTimeout(() => {
+      window.fbq(
+        'trackCustom',
+        'LeadQualificado',
+        {
+          content_name: 'Concierge Internacional',
+          content_category: 'Milhas',
+          currency: 'BRL',
+        },
+        {},
+        () => {
+          window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+        }
+      );
+    } else {
       window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
-    }, 100);
+    }
   };
 
   return (
@@ -65,18 +71,64 @@ function App() {
       >
         <div className="hero-overlay" />
         <div className="container hero-content">
-          <h1>Viaje pagando menos: eu pesquiso e emito sua passagem com milhas.</h1>
+          <h1>Sua passagem internacional mais barata. Sem você perder tempo com milhas.</h1>
           <p className="hero-subtitle">
-            Você escolhe o voo, eu faço o resto. Se não houver economia real
-            comparada ao preço em dinheiro, devolvo seus R$ 197.
+            Serviço de concierge de emissão. Você foca no destino, nós no preço.
           </p>
           <a
             href="#checkout-kiwify-197" // TODO: Substituir pelo link real da Kiwify
             className="btn btn-primary pulse"
             onClick={(e) => handleCTAClick(e, '#checkout-kiwify-197')}
           >
-            Quero Economizar Agora
+            Quero um especialista para pagar menos
           </a>
+        </div>
+      </section>
+
+      {/* DEPOIMENTOS (ANTES DO COMO FUNCIONA) */}
+      <section className="testimonials">
+        <div className="container">
+          <h2>Quem já confiou na gente</h2>
+          <div className="testimonials-grid">
+            <div className="testimonial-card">
+              <p className="testimonial-text">
+                {/* TODO: Substituir pelo depoimento real */}
+                "Paguei R$ 2.400 num voo para Orlando que estava R$ 4.100 em dinheiro. O serviço se pagou e ainda economizei R$ 1.700."
+              </p>
+              <p className="testimonial-author">— João, Campinas</p>
+            </div>
+            <div className="testimonial-card">
+              <p className="testimonial-text">
+                {/* TODO: Substituir pelo depoimento real */}
+                "Minha família foi para Lisboa por menos da metade do preço. Atendimento impecável."
+              </p>
+              <p className="testimonial-author">— Maria, Belo Horizonte</p>
+            </div>
+          </div>
+
+          {/* Exemplo real de economia */}
+          <div className="economy-example">
+            <span>💰</span>
+            <span>
+              <strong>Exemplo real:</strong> economia líquida de <strong>R$ 1.003</strong> após a taxa de R$ 197.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA INTERMEDIÁRIO */}
+      <section className="cta-mid">
+        <div className="container">
+          <a
+            href="#checkout-kiwify-197"
+            className="btn btn-primary pulse"
+            onClick={(e) => handleCTAClick(e, '#checkout-kiwify-197')}
+          >
+            Quero um especialista para pagar menos
+          </a>
+          <p className="guarantee-reminder">
+            <span>🛡️</span> Melhor preço garantido ou devolvemos 100% do valor do seu Ticket. Sem burocracia.
+          </p>
         </div>
       </section>
 
@@ -87,52 +139,28 @@ function App() {
           <div className="steps-grid">
             <div className="step-card">
               <div className="step-number">1</div>
-              <h3>Compra e Envio</h3>
-              <p>
-                Você compra o ticket de R$ 197 e me envia os dados do voo
-                pelo WhatsApp.
-              </p>
+              <h3>Adquira o Ticket</h3>
+              <p>Você adquire o Ticket SD Viagens (R$ 197).</p>
             </div>
             <div className="step-card">
               <div className="step-number">2</div>
-              <h3>Pesquisa e Proposta</h3>
-              <p>
-                Eu pesquiso a melhor opção com milhas e preparo sua proposta
-                com o valor final.
-              </p>
+              <h3>Envie os dados</h3>
+              <p>Envia seu destino e datas pelo WhatsApp.</p>
             </div>
             <div className="step-card">
               <div className="step-number">3</div>
-              <h3>Aprovação e Emissão</h3>
-              <p>
-                Você aprova a economia, paga a passagem separada e eu emito
-                na hora.
-              </p>
+              <h3>Pesquisa inteligente</h3>
+              <p>Nós pesquisamos os menores preços com milhas.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* DEPOIMENTOS */}
-      <section className="testimonials">
-        <div className="container">
-          <h2>Quem já economizou</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <p className="testimonial-text">
-                {/* TODO: Substituir pelo depoimento real do João */}
-                "Paguei R$ 1.200 num voo que estava R$ 2.100 em dinheiro.
-                O serviço se pagou e ainda economizei R$ 900."
-              </p>
-              <p className="testimonial-author">— João, São Paulo</p>
+            <div className="step-card">
+              <div className="step-number">4</div>
+              <h3>Aprovação e pagamento</h3>
+              <p>Você aprova e paga a passagem com total segurança.</p>
             </div>
-            <div className="testimonial-card">
-              <p className="testimonial-text">
-                {/* TODO: Substituir pelo depoimento real da Maria */}
-                "Consegui visitar minha família em Orlando por menos da metade
-                do preço. Atendimento impecável."
-              </p>
-              <p className="testimonial-author">— Maria, Rio de Janeiro</p>
+            <div className="step-card">
+              <div className="step-number">5</div>
+              <h3>É só arrumar as malas</h3>
+              <p>Pronto. Você recebe a passagem emitida.</p>
             </div>
           </div>
         </div>
@@ -143,10 +171,11 @@ function App() {
         <div className="container">
           <div className="guarantee-box">
             <div className="guarantee-icon">🛡️</div>
-            <h2>Garantia Total</h2>
+            <h2>Se não economizarmos, devolvemos seu dinheiro</h2>
             <p>
-              Se eu não encontrar um voo mais barato que o preço em dinheiro,
-              devolvo integralmente seus R$ 197. <strong>Risco zero para você.</strong>
+              Se eu não encontrar um voo mais barato que o preço em dinheiro, devolvo integralmente seus R$ 197.
+              <br />
+              <strong>Risco zero para você.</strong>
             </p>
           </div>
         </div>
@@ -155,24 +184,17 @@ function App() {
       {/* CTA FINAL */}
       <section className="cta-final">
         <div className="container">
-          <h2>Pronto para economizar na sua próxima viagem?</h2>
+          <h2>Pronto para pagar menos na sua viagem internacional?</h2>
           <p className="cta-subtext">
-            Mais de 200 clientes já economizaram com milhas.
+            Mais de 200 clientes já economizaram com milhas em voos de longa distância.
           </p>
           <a
-            href="#checkout-kiwify-197" // TODO: Substituir pelo link real da Kiwify
+            href="#checkout-kiwify-197"
             className="btn btn-primary pulse"
             onClick={(e) => handleCTAClick(e, '#checkout-kiwify-197')}
           >
-            Quero Economizar Agora
+            Quero um especialista para pagar menos
           </a>
-
-          {/* UPSELL CORRIGIDO */}
-          <p className="upsell">
-            <a href="#checkout-kiwify-397">
-              Conheça o Pacote de Viagem Completo com Milhas (R$ 397)
-            </a>
-          </p>
         </div>
       </section>
 
@@ -180,13 +202,16 @@ function App() {
       <footer className="footer">
         <div className="container">
           <p>© 2026 SD Viagens. Todos os direitos reservados.</p>
+          <p className="footer-security">
+            SD Viagens. CNPJ XXXX. Sem estresse, só economia.
+          </p>
           <p>
             <a
-              href="https://wa.me/5511999999999" // TODO: Substituir pelo número real
+              href="https://wa.me/5511976134095"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Fale conosco pelo WhatsApp
+              Fale com a gente pelo WhatsApp
             </a>
           </p>
         </div>
@@ -195,4 +220,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
