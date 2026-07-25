@@ -4,10 +4,10 @@ import './App.css';
 /**
  * ============================================================
  * SD VIAGENS – CONCIERGE DE VOOS INTERNACIONAIS
- * (Variação 2: Terceirização Inteligente)
+ * (Layout Premium – Seções Destacadas)
  * ============================================================
  * 
- * PLACEHOLDERS PARA SUBSTITUIR (procure por "TODO"):
+ * PLACEHOLDERS (procure por "TODO"):
  * 1. Link real da Kiwify (R$197)
  * 2. Depoimentos reais
  * 3. Pixel ID da Meta (no index.html)
@@ -50,7 +50,7 @@ function Home() {
 
   return (
     <div className="app">
-      {/* HEADER */}
+      {/* HEADER PREMIUM */}
       <header className="header">
         <div className="container header-content">
           <img
@@ -62,7 +62,7 @@ function Home() {
         </div>
       </header>
 
-      {/* HERO COM BACKGROUND IMAGE */}
+      {/* HERO COM BACKGROUND IMAGE – FOCO TOTAL */}
       <section
         className="hero"
         style={{
@@ -85,12 +85,13 @@ function Home() {
         </div>
       </section>
 
-      {/* DEPOIMENTOS (ANTES DO COMO FUNCIONA) */}
+      {/* PROVA SOCIAL EM DESTAQUE */}
       <section className="testimonials">
         <div className="container">
-          <h2>Quem já confiou na gente</h2>
+          <h2>Resultados reais de quem já confiou na gente</h2>
           <div className="testimonials-grid">
             <div className="testimonial-card">
+              <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
                 {/* TODO: Substituir pelo depoimento real */}
                 "Paguei R$ 2.400 num voo para Orlando que estava R$ 4.100 em dinheiro. O serviço se pagou e ainda economizei R$ 1.700."
@@ -98,6 +99,7 @@ function Home() {
               <p className="testimonial-author">— João, Campinas</p>
             </div>
             <div className="testimonial-card">
+              <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
                 {/* TODO: Substituir pelo depoimento real */}
                 "Minha família foi para Lisboa por menos da metade do preço. Atendimento impecável."
@@ -105,8 +107,6 @@ function Home() {
               <p className="testimonial-author">— Maria, Belo Horizonte</p>
             </div>
           </div>
-
-          {/* Exemplo real de economia */}
           <div className="economy-example">
             <span>💰</span>
             <span>
@@ -116,57 +116,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA INTERMEDIÁRIO */}
-      <section className="cta-mid">
-        <div className="container">
-          <a
-            href="#checkout-kiwify-197"
-            className="btn btn-primary pulse"
-            onClick={(e) => handleCTAClick(e, '#checkout-kiwify-197')}
-          >
-            Quero um especialista para pagar menos
-          </a>
-          <p className="guarantee-reminder">
-            <span>🛡️</span> Melhor preço garantido ou devolvemos 100% do valor do seu Ticket. Sem burocracia.
-          </p>
-        </div>
-      </section>
-
-      {/* COMO FUNCIONA */}
-      <section className="how-it-works">
-        <div className="container">
-          <h2>Como funciona</h2>
-          <div className="steps-grid">
-            <div className="step-card">
-              <div className="step-number">1</div>
-              <h3>Adquira o Ticket</h3>
-              <p>Você adquire o Ticket SD Viagens (R$ 197).</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">2</div>
-              <h3>Envie os dados</h3>
-              <p>Envia seu destino e datas pelo WhatsApp.</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">3</div>
-              <h3>Pesquisa inteligente</h3>
-              <p>Nós pesquisamos os menores preços com milhas.</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">4</div>
-              <h3>Aprovação e pagamento</h3>
-              <p>Você aprova e paga a passagem com total segurança.</p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">5</div>
-              <h3>É só arrumar as malas</h3>
-              <p>Pronto. Você recebe a passagem emitida.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* GARANTIA */}
+      {/* GARANTIA COMO BLOCO VISUAL DE ALTA CONFIANÇA */}
       <section className="guarantee">
         <div className="container">
           <div className="guarantee-box">
@@ -177,11 +127,69 @@ function Home() {
               <br />
               <strong>Risco zero para você.</strong>
             </p>
+            <div className="guarantee-seal">
+              <span>✓</span> R$ 197 protegidos
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
+      {/* PASSO A PASSO HORIZONTAL COM ÍCONES */}
+      <section className="how-it-works">
+        <div className="container">
+          <h2>Como funciona</h2>
+          <div className="steps-grid">
+            <div className="step-card">
+              <div className="step-icon">🎫</div>
+              <h3>1. Adquira o Ticket</h3>
+              <p>Você adquire o Ticket SD Viagens (R$ 197).</p>
+            </div>
+            <div className="step-card">
+              <div className="step-icon">💬</div>
+              <h3>2. Envie os dados</h3>
+              <p>Envia seu destino e datas pelo WhatsApp.</p>
+            </div>
+            <div className="step-card">
+              <div className="step-icon">🔍</div>
+              <h3>3. Pesquisa inteligente</h3>
+              <p>Nós pesquisamos os menores preços com milhas.</p>
+            </div>
+            <div className="step-card">
+              <div className="step-icon">💳</div>
+              <h3>4. Aprovação e pagamento</h3>
+              <p>Você aprova e paga a passagem com total segurança.</p>
+            </div>
+            <div className="step-card">
+              <div className="step-icon">🧳</div>
+              <h3>5. É só arrumar as malas</h3>
+              <p>Pronto. Você recebe a passagem emitida.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ PARA OBJEÇÕES */}
+      <section className="faq">
+        <div className="container">
+          <h2>Dúvidas frequentes</h2>
+          <div className="faq-grid">
+            <div className="faq-item">
+              <h3>Como funciona a garantia?</h3>
+              <p>Se não encontrarmos um voo mais barato que o preço em dinheiro, devolvemos integralmente os R$ 197. Sem burocracia.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Quanto tempo leva para receber a proposta?</h3>
+              <p>Respondo com sua proposta em até 24 horas após o envio dos dados pelo WhatsApp.</p>
+            </div>
+            <div className="faq-item">
+              <h3>O serviço funciona para voos nacionais?</h3>
+              <p>Sim, mas é especialmente vantajoso para voos internacionais e de alta temporada, onde a economia é maior.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL COM URGÊNCIA SUTIL */}
       <section className="cta-final">
         <div className="container">
           <h2>Pronto para pagar menos na sua viagem internacional?</h2>
@@ -195,6 +203,7 @@ function Home() {
           >
             Quero um especialista para pagar menos
           </a>
+          <p className="cta-urgency">Vagas limitadas este mês – garantia de resposta em até 24h</p>
         </div>
       </section>
 
