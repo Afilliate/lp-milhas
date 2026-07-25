@@ -50,7 +50,7 @@ function Home() {
       >
         <div className="hero-overlay" />
         <div className="container hero-content">
-          <h1>Primeira Classe pelo preço da Econômica.</h1>
+          <h1>Economia de verdade em voos internacionais — sem você precisar entender de milhas.</h1>
           <p className="hero-subtitle">
             Concierge de emissão com milhas — você compra o ticket de R$ 197, 
             nós encontramos sua passagem internacional mais barata. 
