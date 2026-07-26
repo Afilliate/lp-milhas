@@ -25,7 +25,8 @@ function Obrigado() {
         <div className="container thankyou-content">
           <h1>Pagamento confirmado! Agora é com a SD Viagens.</h1>
           <p className="subtitle">
-            Recebemos seu pedido do Ticket de Emissão. Para começarmos, envie os dados do seu voo pelo WhatsApp agora mesmo.
+            Recebemos seu pedido do Ticket de Emissão. Para emitirmos sua passagem,
+            envie os dados abaixo pelo WhatsApp agora mesmo.
           </p>
 
           <div className="instructions">
@@ -34,14 +35,16 @@ function Obrigado() {
               <li>Origem e destino</li>
               <li>Datas de ida e volta</li>
               <li>Número de passageiros</li>
+              <li>CPF e RG de cada passageiro (obrigatório para emissão da passagem)</li>
             </ol>
             <p style={{ marginTop: 12 }}>
-              Responderei com sua cotação em até 24 horas. Se a economia não valer a pena, devolvo os R$ 197 — você não perde nada.
+              Responderei com sua cotação em até 24 horas. Se a economia não valer
+              a pena, devolvo os R$ 197 — você não perde nada.
             </p>
           </div>
 
           <a
-            href="https://wa.me/5511976134095?text=Ol%C3%A1%2C+comprei+o+Ticket+de+Emiss%C3%A3o+e+quero+minha+cota%C3%A7%C3%A3o.+Aqui+est%C3%A3o+os+dados+do+voo%3A"
+            href="https://wa.me/5511976134095?text=Ol%C3%A1%2C%20comprei%20o%20Ticket%20de%20Emiss%C3%A3o%20e%20quero%20minha%20cota%C3%A7%C3%A3o.%20Aqui%20est%C3%A3o%20os%20dados%20do%20voo%3A%0A%0A1.%20Origem%20e%20destino%3A%0A2.%20Datas%20de%20ida%20e%20volta%3A%0A3.%20N%C3%BAmero%20de%20passageiros%3A%0A4.%20CPF%20e%20RG%20de%20cada%20passageiro%3A"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
@@ -58,7 +61,8 @@ function Obrigado() {
               </svg>
             </span>
             <span>
-              <strong>Garantia de economia:</strong> se não encontrarmos um voo mais barato, você recebe 100% do valor do ticket de volta.
+              <strong>Garantia de economia:</strong> se não encontrarmos um voo
+              mais barato, você recebe 100% do valor do ticket de volta.
             </span>
           </div>
         </div>
