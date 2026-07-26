@@ -7,18 +7,18 @@ export default defineConfig({
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true,      // Remove todos os console.log
-        drop_debugger: true,     // Remove debuggers
-        passes: 2               // Compressão mais agressiva
+        drop_console: true,
+        drop_debugger: true,
+        passes: 2
       },
       mangle: {
         properties: {
-          regex: /^_/           // Ofusca propriedades privadas que começam com _
+          regex: /^_/
         }
       },
       output: {
         beautify: false,
-        comments: false         // Remove todos os comentários do bundle
+        comments: false
       }
     }
   }
