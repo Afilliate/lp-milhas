@@ -52,17 +52,6 @@
     </script>
   </head>
   <body>
-    <!-- Verificação de domínio – impede execução em domínios não autorizados -->
-    <script>
-      (function() {
-        const allowedHosts = ['sdviagens.com', 'localhost', '127.0.0.1'];
-        if (!allowedHosts.includes(window.location.hostname)) {
-          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#1a1a1a;color:#C0A05D;font-family:serif;text-align:center;"><p>SD Viagens – Acesse o site oficial.</p></div>';
-          throw new Error('Acesso não autorizado');
-        }
-      })();
-    </script>
-
     <!-- Meta Pixel Code (noscript) -->
     <noscript>
       <img height="1" width="1" style="display:none"
