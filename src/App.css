@@ -1,5 +1,5 @@
 /* ============================================================
-   SD VIAGENS – ARQUITETURA DE PERSUASÃO
+   SD VIAGENS – ARQUITETURA DE PERSUASÃO + LUXO SENSORIAL
    Paleta: #1a1a1a | #C0A05D | #262626 | #b3b3b3
    Fontes: Playfair Display (títulos), Inter (corpo)
    ============================================================ */
@@ -12,10 +12,11 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #1a1a1a;
+  background: radial-gradient(ellipse at 50% 0%, #222 0%, #1a1a1a 70%);
   color: #b3b3b3;
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.01em;
 }
 
 h1, h2, h3, .brand-name {
@@ -59,19 +60,20 @@ a {
   font-size: 1rem;
   cursor: pointer;
   border: none;
-  transition: background 0.2s ease, transform 0.1s ease;
-  min-height: 48px; /* área de toque mínima */
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  min-height: 48px;
 }
 
 .btn-primary {
   background: #C0A05D;
   color: #1a1a1a;
-  box-shadow: 0 6px 20px rgba(192, 160, 93, 0.3);
+  box-shadow: 0 8px 24px rgba(192, 160, 93, 0.25);
 }
 
 .btn-primary:hover {
   background: #d4b46e;
   transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(192, 160, 93, 0.35);
 }
 
 .pulse {
@@ -87,8 +89,8 @@ a {
 /* ========== HEADER ========== */
 .header {
   padding: 24px 0;
-  border-bottom: 1px solid rgba(192, 160, 93, 0.12);
-  background: #1a1a1a;
+  border-bottom: 0.5px solid rgba(192, 160, 93, 0.12);
+  background: transparent;
 }
 .header-content {
   display: flex;
@@ -108,7 +110,7 @@ a {
 /* ========== HERO ========== */
 .hero {
   position: relative;
-  padding: 100px 0;
+  padding: 120px 0 100px;
   text-align: center;
   background-size: cover;
   background-position: center 30%;
@@ -117,8 +119,17 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(26,26,26,0.75), rgba(26,26,26,0.95));
+  background: linear-gradient(to bottom, rgba(26,26,26,0.7), rgba(26,26,26,0.95));
+  mix-blend-mode: multiply;
   z-index: 1;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(192, 160, 93, 0.08);
+  z-index: 1;
+  pointer-events: none;
 }
 .hero-content {
   position: relative;
@@ -126,7 +137,7 @@ a {
 }
 .hero h1 {
   color: #C0A05D;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
 }
 .hero-subtitle {
   font-size: 1.1rem;
@@ -137,7 +148,7 @@ a {
 
 /* ========== SEÇÕES GERAIS ========== */
 section {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 /* ========== PROVA SOCIAL ========== */
@@ -147,7 +158,7 @@ section {
 .stats {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 48px;
   margin-bottom: 48px;
   flex-wrap: wrap;
 }
@@ -155,7 +166,7 @@ section {
   text-align: center;
 }
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #C0A05D;
   font-family: 'Playfair Display', serif;
@@ -172,11 +183,14 @@ section {
   margin-top: 32px;
 }
 .testimonial-card {
-  background: #262626;
-  border: 1px solid rgba(192, 160, 93, 0.1);
+  background: rgba(38, 38, 38, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 0.5px solid rgba(192, 160, 93, 0.1);
   border-radius: 8px;
-  padding: 32px 24px;
+  padding: 36px 24px;
   text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 0 0 0.5px rgba(192,160,93,0.08);
 }
 .testimonial-stars {
   color: #C0A05D;
@@ -201,16 +215,18 @@ section {
   background: #1a1a1a;
 }
 .guarantee-box {
-  background: #262626;
-  border: 1px solid #C0A05D;
+  background: rgba(38, 38, 38, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 0.5px solid #C0A05D;
   border-radius: 12px;
-  padding: 48px 36px;
+  padding: 56px 40px;
   text-align: center;
   max-width: 650px;
   margin: 0 auto;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4), inset 0 0 0 0.5px rgba(192,160,93,0.15);
 }
 .guarantee-icon {
-  font-size: 3rem;
   margin-bottom: 16px;
 }
 .guarantee-box h2 {
@@ -227,12 +243,13 @@ section {
   align-items: center;
   gap: 8px;
   background: #1a1a1a;
-  border: 1px solid #C0A05D;
-  padding: 6px 20px;
+  border: 0.5px solid #C0A05D;
+  padding: 8px 24px;
   border-radius: 30px;
   color: #C0A05D;
   font-weight: 600;
   margin-top: 24px;
+  box-shadow: 0 0 12px rgba(192,160,93,0.2);
 }
 
 /* ========== COMO FUNCIONA ========== */
@@ -242,11 +259,14 @@ section {
   gap: 32px;
 }
 .step-card {
-  background: #262626;
-  border: 1px solid rgba(192, 160, 93, 0.15);
+  background: rgba(38, 38, 38, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 0.5px solid rgba(192, 160, 93, 0.1);
   border-radius: 12px;
-  padding: 32px 20px;
+  padding: 40px 24px;
   text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 0 0 0.5px rgba(192,160,93,0.06);
 }
 .step-number {
   width: 40px;
@@ -269,8 +289,10 @@ section {
 .economy-example {
   margin-top: 40px;
   padding: 24px;
-  background: #262626;
-  border: 1px solid rgba(192, 160, 93, 0.3);
+  background: rgba(38, 38, 38, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 0.5px solid rgba(192, 160, 93, 0.3);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -306,10 +328,13 @@ section {
   margin: 0 auto;
 }
 .faq-item {
-  background: #262626;
-  border: 1px solid rgba(192, 160, 93, 0.1);
+  background: rgba(38, 38, 38, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 0.5px solid rgba(192, 160, 93, 0.1);
   border-radius: 8px;
-  padding: 24px;
+  padding: 28px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25), inset 0 0 0 0.5px rgba(192,160,93,0.05);
 }
 .faq-item h3 {
   font-size: 1.1rem;
@@ -337,8 +362,8 @@ section {
 
 /* ========== FOOTER ========== */
 .footer {
-  padding: 32px 0;
-  border-top: 1px solid rgba(192, 160, 93, 0.1);
+  padding: 40px 0;
+  border-top: 0.5px solid rgba(192, 160, 93, 0.08);
   text-align: center;
   color: #777;
   font-size: 0.85rem;
@@ -368,32 +393,33 @@ section {
   margin-bottom: 32px;
 }
 .instructions {
-  background: #262626;
+  background: rgba(38,38,38,0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border-radius: 8px;
   padding: 28px;
   margin: 32px 0;
   text-align: left;
+  border: 0.5px solid rgba(192,160,93,0.1);
 }
 .instructions ol {
   margin: 12px 0;
   padding-left: 20px;
 }
 .guarantee-thankyou {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   margin-top: 32px;
   font-size: 0.9rem;
   color: #C0A05D;
-  border: 1px solid rgba(192, 160, 93, 0.3);
+  border: 0.5px solid rgba(192, 160, 93, 0.3);
   padding: 12px 20px;
   border-radius: 30px;
-  display: inline-flex;
 }
-/* ========== ANIMAÇÕES DE LUXO DISCRETO ========== */
 
-/* Fade-in controlado por IntersectionObserver */
+/* ========== ANIMAÇÕES DE LUXO DISCRETO ========== */
 .fade-section {
   opacity: 0;
   transform: translateY(16px);
@@ -403,8 +429,6 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Hover refinado para cards (depoimentos, passos, FAQ) */
 .testimonial-card,
 .step-card,
 .faq-item {
@@ -414,33 +438,23 @@ section {
 .step-card:hover,
 .faq-item:hover {
   border-color: rgba(192, 160, 93, 0.35);
-  box-shadow: 0 0 0 1px rgba(192, 160, 93, 0.15);
+  box-shadow: 0 0 0 0.5px rgba(192, 160, 93, 0.25), 0 8px 24px rgba(0,0,0,0.4);
 }
-
-/* Brilho sutil no selo de garantia */
 @keyframes subtleGlow {
   0%, 100% { box-shadow: 0 0 8px rgba(192, 160, 93, 0.2); }
-  50% { box-shadow: 0 0 14px rgba(192, 160, 93, 0.4); }
+  50% { box-shadow: 0 0 16px rgba(192, 160, 93, 0.45); }
 }
 .guarantee-seal {
   animation: subtleGlow 3s ease-in-out infinite;
 }
 
-/* Ajuste para preferência de redução de movimento (acessibilidade) */
-@media (prefers-reduced-motion: reduce) {
-  .fade-section,
-  .testimonial-card,
-  .step-card,
-  .faq-item,
-  .guarantee-seal {
-    animation: none;
-    transition: none;
-  }
-}
 /* ========== RESPONSIVO ========== */
 @media (max-width: 768px) {
-  .hero {
+  section {
     padding: 80px 0;
+  }
+  .hero {
+    padding: 90px 0 80px;
   }
   .stats {
     gap: 24px;
@@ -453,10 +467,21 @@ section {
     padding: 14px 20px;
   }
   .guarantee-box {
-    padding: 32px 20px;
+    padding: 40px 24px;
   }
   .economy-example {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-section,
+  .testimonial-card,
+  .step-card,
+  .faq-item,
+  .guarantee-seal {
+    animation: none;
+    transition: none;
   }
 }
