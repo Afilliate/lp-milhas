@@ -25,7 +25,7 @@ function Home() {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  const checkoutUrl = 'https://pay.kiwify.com.br/hV1J2Kp'; // Substituir pelo link real
+  const checkoutUrl = 'https://pay.kiwify.com.br/hV1J2Kp'; // Link real do checkout
 
   const handleCTAClick = (e) => {
     e.preventDefault();
