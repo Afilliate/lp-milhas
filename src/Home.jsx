@@ -157,14 +157,21 @@ function Home() {
           </div>
 
           <div className="economy-example">
-            <div>
-              <span className="old-price">R$ 4.200</span>
-              <span style={{margin: '0 8px', color: '#888'}}>→</span>
-              <span className="new-price">R$ 2.997</span>
-            </div>
-            <div className="savings">Economia de R$ 1.203</div>
-          </div>
-        </div>
+  <div className="economy-detail">
+    <span className="economy-label">Preço original do voo:</span>
+    <span className="old-price">R$ 4.200</span>
+  </div>
+  <div className="economy-detail">
+    <span className="economy-label">Preço que você pagou:</span>
+    <span className="new-price">R$ 2.997</span>
+  </div>
+  <div className="economy-divider"></div>
+  <div className="economy-detail">
+    <span className="economy-label">Ticket de Emissão:</span>
+    <span className="ticket-price">R$ 197</span>
+  </div>
+  <div className="savings">Você economizou R$ 1.203</div>
+</div>
       </section>
 
       <section className="faq fade-section">
