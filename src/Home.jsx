@@ -3,15 +3,31 @@ import './App.css';
 
 function Home() {
   useEffect(() => {
+    // Meta Pixel
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'ViewContent', {
         content_name: 'LP Concierge SD Viagens',
         content_category: 'Ticket de Emissão',
       });
     }
+
+    // IntersectionObserver para fade-in sections
+    const sections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  const checkoutUrl = 'https://pay.kiwify.com.br/SEU_CHECKOUT'; // Substituir pelo link real
+  const checkoutUrl = 'https://pay.kiwify.com.br/SEU_CHECKOUT';
 
   const handleCTAClick = (e) => {
     e.preventDefault();
@@ -29,7 +45,6 @@ function Home() {
 
   return (
     <div className="app">
-      {/* HEADER */}
       <header className="header">
         <div className="container header-content">
           <img
@@ -41,7 +56,6 @@ function Home() {
         </div>
       </header>
 
-      {/* HERO */}
       <section
         className="hero"
         style={{
@@ -66,8 +80,7 @@ function Home() {
         </div>
       </section>
 
-      {/* PROVA SOCIAL + ESTATÍSTICAS */}
-      <section className="social-proof">
+      <section className="social-proof fade-section">
         <div className="container">
           <div className="stats">
             <div className="stat-item">
@@ -103,8 +116,7 @@ function Home() {
         </div>
       </section>
 
-      {/* GARANTIA */}
-      <section className="guarantee">
+      <section className="guarantee fade-section">
         <div className="container">
           <div className="guarantee-box">
             <div className="guarantee-icon">🛡️</div>
@@ -120,8 +132,7 @@ function Home() {
         </div>
       </section>
 
-      {/* COMO FUNCIONA (3 PASSOS) */}
-      <section className="how-it-works">
+      <section className="how-it-works fade-section">
         <div className="container">
           <h2>Como funciona</h2>
           <div className="steps-grid">
@@ -133,7 +144,7 @@ function Home() {
             <div className="step-card">
               <div className="step-number">2</div>
               <h3>Envie seu destino</h3>
-              <p>Pelo WhatsApp, você me passa as datas e preferências do voo.</p>
+              <p>Após a compra, você acessa o canal exclusivo e envia seu destino e datas.</p>
             </div>
             <div className="step-card">
               <div className="step-number">3</div>
@@ -153,8 +164,7 @@ function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="faq">
+      <section className="faq fade-section">
         <div className="container">
           <h2>Perguntas que você pode ter</h2>
           <div className="faq-grid">
@@ -168,7 +178,7 @@ function Home() {
             </div>
             <div className="faq-item">
               <h3>Quanto tempo leva para receber a cotação?</h3>
-              <p>Respondo em até 24 horas após o envio dos dados. Geralmente é muito mais rápido.</p>
+              <p>Respondo em até 24 horas após o envio dos dados pelo canal exclusivo. Geralmente é muito mais rápido.</p>
             </div>
             <div className="faq-item">
               <h3>O serviço funciona para voos nacionais?</h3>
@@ -178,8 +188,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="cta-final">
+      <section className="cta-final fade-section">
         <div className="container">
           <h2>Pronto para viajar pagando menos?</h2>
           <p className="cta-subtext">
@@ -196,15 +205,9 @@ function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="footer">
         <div className="container">
           <p>© 2026 SD Viagens. CNPJ: XX.XXX.XXX/XXXX-XX. Todos os direitos reservados.</p>
-          <p style={{marginTop: 8}}>
-            <a href="https://wa.me/5511976134095" target="_blank" rel="noopener noreferrer">
-              Fale conosco pelo WhatsApp
-            </a>
-          </p>
         </div>
       </footer>
     </div>
