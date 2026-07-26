@@ -31,20 +31,38 @@
       fbq('init', 'SEU_PIXEL_ID'); // ← substituir pelo ID real
       fbq('track', 'PageView');
     </script>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Proteção anti-cópia e anti-inspeção -->
     <script>
-  document.addEventListener('contextmenu', event => event.preventDefault());
-  document.onkeydown = function(e) {
-    if (e.keyCode == 123 || // F12
-       (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
-       (e.ctrlKey && e.keyCode == 85) || // Ctrl+U
-       (e.ctrlKey && e.keyCode == 83) // Ctrl+S
-    ) {
-      return false;
-    }
-  };
-</script>
+      // Bloqueio de clique direito
+      document.addEventListener('contextmenu', event => event.preventDefault());
+      // Bloqueio de atalhos de desenvolvedor (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S)
+      document.onkeydown = function(e) {
+        if (
+          e.keyCode == 123 ||                                              // F12
+          (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||                 // Ctrl+Shift+I
+          (e.ctrlKey && e.keyCode == 85) ||                               // Ctrl+U
+          (e.ctrlKey && e.keyCode == 83)                                  // Ctrl+S
+        ) {
+          e.preventDefault();
+          return false;
+        }
+      };
+    </script>
   </head>
   <body>
+    <!-- Verificação de domínio – impede execução em domínios não autorizados -->
+    <script>
+      (function() {
+        const allowedHosts = ['sdviagens.com', 'localhost', '127.0.0.1'];
+        if (!allowedHosts.includes(window.location.hostname)) {
+          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#1a1a1a;color:#C0A05D;font-family:serif;text-align:center;"><p>SD Viagens – Acesse o site oficial.</p></div>';
+          throw new Error('Acesso não autorizado');
+        }
+      })();
+    </script>
+
     <!-- Meta Pixel Code (noscript) -->
     <noscript>
       <img height="1" width="1" style="display:none"
