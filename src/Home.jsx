@@ -25,19 +25,27 @@ function Home() {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  const checkoutUrl = 'https://pay.kiwify.com.br/hV1J2Kp'; // Link real do checkout
+  const checkoutUrl = 'https://pay.kiwify.com.br/hV1J2Kp';
 
+  // Função robusta: abre checkout PRIMEIRO, dispara Pixel DEPOIS
   const handleCTAClick = (e) => {
     e.preventDefault();
+    // Abre o checkout imediatamente
+    const newWindow = window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+    // Dispara o Pixel em segundo plano (não bloqueante)
     if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('trackCustom', 'LeadQualificado', {
-        content_name: 'Concierge Internacional',
-        currency: 'BRL',
-      }, {}, () => {
-        window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
-      });
-    } else {
-      window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+      try {
+        window.fbq('trackCustom', 'LeadQualificado', {
+          content_name: 'Concierge Internacional',
+          currency: 'BRL',
+        });
+      } catch (err) {
+        // Silencia erros do Pixel para nunca travar o checkout
+      }
+    }
+    // Fallback se o popup for bloqueado (raro, mas possível)
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      window.location.href = checkoutUrl;
     }
   };
 
