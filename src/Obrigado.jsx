@@ -51,7 +51,13 @@ function Obrigado() {
           </a>
 
           <div className="guarantee-thankyou">
-            <span>🔒</span>
+            <span>
+              {/* SVG Cadeado */}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0A05D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: 8 }}>
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </span>
             <span>
               <strong>Garantia de economia:</strong> se não encontrarmos um voo mais barato, você recebe 100% do valor do ticket de volta.
             </span>
