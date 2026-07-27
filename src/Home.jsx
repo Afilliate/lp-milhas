@@ -25,7 +25,7 @@ function Home() {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  const checkoutUrl = 'https://pay.kiwify.com.br/hV1J2Kp';
+  const checkoutUrl = 'https://pay.kiwify.com.br/ecTOyTI';
 
   // Única ação: redirecionar a página atual para o checkout
   const handleCTAClick = (e) => {
