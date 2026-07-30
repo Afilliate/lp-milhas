@@ -98,7 +98,7 @@ function Home() {
           <div className="testimonial-card chat-proof">
             <div className="testimonial-stars">★★★★★</div>
             <p className="testimonial-text">
-              <span style={{ color: '#C0A05D' }}>Cliente:</span> "Vamos emitir as passagens, hotel teremos tempo depois."<br/>
+              <span style={{ color: '#C0A05D' }}>SDViagens:</span> "Vamos emitir as passagens, hotel teremos tempo depois."<br/>
               <span style={{ color: '#888' }}>...</span><br/>
               <span style={{ color: '#C0A05D' }}>Cliente:</span> [Pagamento aprovado] Total: R$ 3.680,00 em 5x no cartão Visa.
             </p>
