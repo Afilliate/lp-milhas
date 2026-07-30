@@ -25,23 +25,18 @@ function Home() {
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  const checkoutUrl = 'https://pay.kiwify.com.br/ecTOyTI';
+  const checkoutUrl = 'https://pay.kiwify.com.br/hV1J2Kp';
 
-  // Única ação: redirecionar a página atual para o checkout
   const handleCTAClick = (e) => {
     e.preventDefault();
-    // Dispara o Pixel (não bloqueante)
     if (typeof window !== 'undefined' && window.fbq) {
       try {
         window.fbq('trackCustom', 'LeadQualificado', {
           content_name: 'Concierge Internacional',
           currency: 'BRL',
         });
-      } catch (err) {
-        // silencia erros
-      }
+      } catch (err) {}
     }
-    // Redireciona a aba atual para o checkout
     window.location.href = checkoutUrl;
   };
 
@@ -99,22 +94,19 @@ function Home() {
             </div>
           </div>
 
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-text">
-                "Deixei de pagar R$ 5.400 para Orlando. Com o serviço, paguei R$ 2.100 na passagem. Inacreditável."
-              </p>
-              <p className="testimonial-author">— Ana Carolina, São Paulo</p>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-text">
-                "Minha lua de mel em Paris saiu pela metade do preço. Atendimento atencioso e rápido."
-              </p>
-              <p className="testimonial-author">— Rafael e Juliana, Curitiba</p>
-            </div>
+          {/* Exemplo real de conversa anônimo */}
+          <div className="testimonial-card chat-proof">
+            <div className="testimonial-stars">★★★★★</div>
+            <p className="testimonial-text">
+              <span style={{ color: '#C0A05D' }}>Cliente:</span> "Vamos emitir as passagens, hotel teremos tempo depois."<br/>
+              <span style={{ color: '#888' }}>...</span><br/>
+              <span style={{ color: '#C0A05D' }}>Cliente:</span> [Pagamento aprovado] Total: R$ 3.680,00 em 5x no cartão Visa.
+            </p>
+            <p className="testimonial-author">— Emissão real via Smiles • Cliente anônimo</p>
           </div>
+          <p style={{ textAlign: 'center', color: '#888', fontSize: '0.85rem', marginTop: 16 }}>
+            Acima, um exemplo real de emissão recente. Nenhum dado pessoal foi exposto.
+          </p>
         </div>
       </section>
 
