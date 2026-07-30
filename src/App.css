@@ -176,38 +176,36 @@ section {
   color: #b3b3b3;
   margin-top: 4px;
 }
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  margin-top: 32px;
-}
-.testimonial-card {
-  background: rgba(38, 38, 38, 0.6);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border: 0.5px solid rgba(192, 160, 93, 0.1);
-  border-radius: 8px;
-  padding: 36px 24px;
+
+/* Card de conversa real (anônimo) */
+.chat-proof {
+  background: #1a1a1a;
+  border: 0.5px solid rgba(192, 160, 93, 0.2);
+  border-radius: 12px;
+  padding: 28px 24px;
+  margin: 32px auto 0;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   text-align: left;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 0 0 0.5px rgba(192,160,93,0.08);
 }
-.testimonial-stars {
+.chat-proof .testimonial-text {
+  font-family: 'Inter', monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+.chat-proof .testimonial-author {
+  color: #C0A05D;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: right;
+}
+.chat-proof .testimonial-stars {
   color: #C0A05D;
   font-size: 1rem;
   letter-spacing: 2px;
   margin-bottom: 12px;
-}
-.testimonial-text {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #ccc;
-  margin-bottom: 16px;
-}
-.testimonial-author {
-  font-weight: 600;
-  color: #C0A05D;
-  font-size: 0.9rem;
 }
 
 /* ========== GARANTIA ========== */
@@ -285,7 +283,7 @@ section {
   margin-bottom: 8px;
 }
 
-/* ========== EXEMPLO DE ECONOMIA REFINADO ========== */
+/* ========== EXEMPLO DE ECONOMIA ========== */
 .economy-example {
   margin-top: 40px;
   padding: 28px 24px;
